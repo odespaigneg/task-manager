@@ -25,13 +25,16 @@ El backend está construido con Node.js y Express, y utiliza MongoDB como base d
    cd task-manager-backend
    
 2. Instala las dependencias necesarias:   
+   ```bash
    npm install
 
-3. Configura las variables de entorno. Crea un archivo .env en la carpeta del backend y añade las siguientes variables:
+3. Configura las variables de entorno. Crea un archivo .env en la carpeta root del backend y añade las siguientes variables:
+   ```bash
    MONGO_URI=tu_uri_de_mongo
    PORT=5000
 
 4. Para ejecutar el servidor, utiliza el siguiente comando:
+   ```bash
    node server.js
 
 El backend estará disponible en http://localhost:5001
@@ -44,15 +47,19 @@ El frontend está construido con React y se encarga de la interfaz de usuario de
 ### Instalación
 
 1. Navega a la carpeta del frontend:
+   ```bash
    cd task-manager-frontend
 
 2. Instala las dependencias necesarias:
+   ```bash
    npm install
 
-3. Configura las variables de entorno. Crea un archivo .env en la carpeta del backend y añade las siguientes variables:
+3. Configura las variables de entorno. Crea un archivo .env en la carpeta root del frontend y añade las siguientes variables:
+   ```bash
    REACT_APP_API_BASE_URL=uri_api
 
 4. Para iniciar la aplicación React, utiliza el siguiente comando:
+   ```bash
    npm start
 
    El frontend estará disponible en http://localhost:3000.
