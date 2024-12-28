@@ -37,9 +37,7 @@ El backend está construido con Node.js y Express, y utiliza MongoDB como base d
    ```bash
    node server.js
 
-El backend estará disponible en http://localhost:5001
-Documentación de la API
-La documentación de la API está disponible en http://localhost:5001/api-docs gracias a Swagger. Puedes utilizar esta interfaz para probar los endpoints de la API.
+El backend estará disponible en http://localhost:5001. La documentación de la API está disponible en http://localhost:5001/api-docs.
 
 ### Frontend
 El frontend está construido con React y se encarga de la interfaz de usuario de la aplicación.
