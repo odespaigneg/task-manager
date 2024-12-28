@@ -1,23 +1,23 @@
-# task-manager
+## task-manager
 
-# Aplicación URL (Netlify)
+## Aplicación URL (Netlify)
 https://task-manager-react-frontend.netlify.app/
 
-# Api URL (Railway):
+## Api URL (Railway):
 https://task-manager-production-ccae.up.railway.app/api/tasks/
  
-# Api Swagger URL (Railway):
+## Api Swagger URL (Railway):
 https://task-manager-production-ccae.up.railway.app/api-docs/
 
-# Task Manager Application
+## Task Manager Application
 
 Este es un proyecto de gestión de tareas que consta de un backend en Node.js y un frontend en React. Esta aplicación permite a los usuarios crear, editar, eliminar y visualizar tareas.
 
-## Backend
+### Backend
 
 El backend está construido con Node.js y Express, y utiliza MongoDB como base de datos.
 
-### Instalación
+#### Instalación
 
 1. Navega a la carpeta del backend (task-manager-backend):
 
@@ -41,10 +41,10 @@ El backend estará disponible en http://localhost:5001
 Documentación de la API
 La documentación de la API está disponible en http://localhost:5001/api-docs gracias a Swagger. Puedes utilizar esta interfaz para probar los endpoints de la API.
 
-## Frontend
+### Frontend
 El frontend está construido con React y se encarga de la interfaz de usuario de la aplicación.
 
-### Instalación
+#### Instalación
 
 1. Navega a la carpeta del frontend:
    ```bash
@@ -62,7 +62,7 @@ El frontend está construido con React y se encarga de la interfaz de usuario de
    ```bash
    npm start
 
-   El frontend estará disponible en http://localhost:3000.
+El frontend estará disponible en http://localhost:3000.
 
 Configuración de la API
 Asegurese de que el frontend apunte a la URL correcta de la API.
