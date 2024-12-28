@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
-import axios from '../helpers/axios-helper';
 
-const TaskForm = () => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+const TaskForm = ({ addTask }) => {
+    const [newTitle, setNewTitle] = useState('');
+    const [newDescription, setNewDescription] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        await axios.post('/api/tasks', { title, description });
-        setTitle('');
-        setDescription('');
+        if (newTitle.trim() === '') return;
+
+        addTask({ title: newTitle, description: newDescription });
+
+        setNewTitle('');
+        setNewDescription('');
     };
 
     return (
         <form onSubmit={handleSubmit} className="mt-4">
-            <input 
+            <input
                 type="text"
                 placeholder="Título de la tarea"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
                 required
                 className="border p-2 w-full"
             />
-            <input 
+            <input
                 type="text"
                 placeholder="Descripción (opcional)"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
                 className="border p-2 w-full mt-2"
             />
-            <button 
-                type="submit" 
+            <button
+                type="submit"
                 className="bg-teal-500 text-white px-4 py-2 mt-2 rounded"
             >
                 Agregar Tarea

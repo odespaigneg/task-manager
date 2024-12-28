@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../helpers/axios-helper';
+import TaskForm from './TaskForm';
 
 const TaskList = () => {
     const [tasks, setTasks] = useState([]);
@@ -42,15 +43,9 @@ const TaskList = () => {
         fetchTasks();
     };
 
-    const addTask = async () => {
-        if (newTitle.trim() === '') {
-            return;
-        }
-
-        await axios.post('/api/tasks', { title: newTitle, description: newDescription });
-        setNewTitle('');
-        setNewDescription('');
-        fetchTasks();
+    const addTask = async (task) => {
+        await axios.post('/api/tasks', task);
+        fetchTasks(); // Actualizar la lista de tareas después de agregar
     };
 
     const filteredTasks = tasks.filter(task => {
@@ -61,13 +56,16 @@ const TaskList = () => {
 
     return (
         <div className="mt-4">
-            {/* Filtros */}
+            <div className="mb-4">
+                <TaskForm addTask={addTask} />
+            </div>
+
             <div className="mb-4">
                 <button onClick={() => setFilter('all')} className="mr-2 bg-gray-200 px-3 py-1 rounded">Todas</button>
                 <button onClick={() => setFilter('completed')} className="mr-2 bg-green-200 px-3 py-1 rounded">Completadas</button>
                 <button onClick={() => setFilter('pending')} className="bg-red-200 px-3 py-1 rounded">Pendientes</button>
             </div>
-
+            
             <ul className="space-y-2">
                 {filteredTasks.map(task => (
                     <li key={task._id} className="flex justify-between items-center border p-2">
