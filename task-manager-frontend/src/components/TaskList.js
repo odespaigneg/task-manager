@@ -7,9 +7,8 @@ const TaskList = () => {
     const [editingTask, setEditingTask] = useState(null);
     const [newTitle, setNewTitle] = useState('');
     const [newDescription, setNewDescription] = useState('');
-    const [filter, setFilter] = useState('all'); // Estado para el filtro
+    const [filter, setFilter] = useState('all');
 
-    // Función para obtener todas las tareas
     const fetchTasks = async () => {
         const response = await axios.get('/api/tasks');
         setTasks(response.data);
