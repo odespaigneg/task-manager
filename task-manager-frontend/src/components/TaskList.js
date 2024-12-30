@@ -44,7 +44,7 @@ const TaskList = () => {
 
     const addTask = async (task) => {
         await axios.post('/api/tasks', task);
-        fetchTasks(); // Actualizar la lista de tareas después de agregar
+        fetchTasks();
     };
 
     const filteredTasks = tasks.filter(task => {
